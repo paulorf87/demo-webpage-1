@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: 'Barlow', sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Fraunces', serif;
+}
+
+h1 {
+    color:#fff;
+    font-size: 56px;
+    margin-top: 105px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size:40px;
+    letter-spacing: 3px;
+}
+
+.container {
+    max-width: 1440px;
+    margin:0 auto;
+    position:relative;
+    box-shadow: 0 0 8px #888;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 800px;
+    width: 100%;
+    padding: 0 40px;
+}
+
+.header-img {
+    position: absolute;
+    z-index:-10;
+    width: 100%;
+    height: 800px;
+    background: url("/images/header.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    max-height: 56px;
+    margin: 34px auto;
+    width:100%;
+}
+
+.logo {
+    background: url("/images/logo.svg") no-repeat;
+    width: 170px;
+    height: 33px;
+    flex-grow: 1;
+}
+
+.nav-menu {
+    list-style-type: none;
+    display: flex;
+    gap:47px;
+}
+
+.nav-menu a {
+    color:#fff;
+    text-decoration: none;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.card img {
+    display: flex;
+    width: 100%;
+    height: 100%;        
+}
+
+.card { 
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+.card .text {
+    display: flex;
+    align-items: flex-start;
+    justify-self: center;
+    flex-direction: column;
+    max-width: 445px;
+}
+
+.card .text p {
+    margin-top: 32px;
+}
+
+.card .text a {
+    margin-top: 40px;
+    text-decoration: none;
+    color:#000;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 10px solid transparent; 
+}
+.card .text a:hover {
+    border-bottom: 10px solid orangered;
+}
+
+.testimonials {
+    padding:0 165px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:30px;
+}
+
+.testimonial{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
