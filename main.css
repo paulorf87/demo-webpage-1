@@ -25,16 +25,15 @@ h1, h2, h3, h4 {
 
 h1 {
     color:#fff;
-    font-size: 56px;
+    font-size: clamp(48px, 4vw,56px);
     margin-top: 105px;
     text-transform: uppercase;
 }
 
 h2 {
-    font-size:40px;
+    font-size:clamp(24px,2vw,40px);
     letter-spacing: 3px;
 }
-
 .container {
     max-width: 1440px;
     margin:0 auto;
@@ -42,23 +41,25 @@ h2 {
     box-shadow: 0 0 8px #888;
     background-color: var(--base);
 }
-
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 800px;
+    height: clamp(600px,100vw,800px);
     width: 100%;
     padding: 0 40px;
     background-color: var(--primary);
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
-
+header h1 {
+    margin-top: clamp(32px,5vw,100px);
+}
 header h2 {
-    color:#fff;
+    color:#e5e5e5;
+    z-index: 20;
 }
-
 .header-img {
     position: absolute;
     bottom: -50%;
@@ -68,7 +69,6 @@ header h2 {
     margin-left: auto;
     margin-right:auto;   
 }
-
 nav {
     display: flex;
     align-items: baseline;
@@ -76,20 +76,21 @@ nav {
     margin: 34px auto;
     width:100%;
 }
-
 .logo {
+    text-align: left;
     width: 170px;
     height: 33px;
     flex-grow: 1;
-    color:#fff;
 }
-
+.logo h2 {
+    color: #fff;
+    font-size: clamp(40px, 2vw,64px);
+}
 .nav-menu {
     list-style-type: none;
     display: flex;
-    gap:40px;
+    gap:16px;
 }
-
 .nav-menu a {
     color:#fff;
     font-size: 18px;
@@ -102,26 +103,23 @@ nav {
 .nav-menu a:hover {
     background-color: rgba(0,0,0,.65);
 }
-
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: minmax(500px,1fr);
 }
-
 .card img {
     display: flex;
     width: 80%;
     height: 80%;
     margin: 0 auto;        
 }
-
 .card { 
     display: flex;
     justify-self: center;
     align-items: center;
+    padding:32px;
+    min-height: 500px;
 }
-
 .card .text {
     display: flex;
     align-items: flex-start;
@@ -129,16 +127,13 @@ nav {
     flex-direction: column;
     max-width: 445px;
 }
-
 .card .text h2 {
     color:#666;
 }
-
 .card .text p {
     margin-top: 32px;
     line-height: 175%;
 }
-
 .card .text a {
     margin-top: 40px;
     text-decoration: none;
@@ -151,13 +146,11 @@ nav {
 .card .text a:hover {
     border-bottom: 10px solid orangered;
 }
-
 .second {
     width: 100%;
     height: 100%;
     background-color: var(--secondary);
 }
-
 .third {
     width: 100%;
     height: 100%;
@@ -173,13 +166,13 @@ nav {
     height: 100%;
     background-color: var(--light);
 }
-
 .testimonials {
-    margin-top: 160px;
+    margin-top: clamp(32px, 5vw,160px);
     padding:0 165px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .testimonials h3 {
@@ -188,11 +181,11 @@ nav {
 }
 
 .testimonials-grid {
-    margin-top: 80px;
+    margin-top: clamp(32px, 6vw, 80px);
     margin-bottom: 24px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap:30px;
+    gap:32px;
 }
 
 .testimonial{
@@ -218,4 +211,51 @@ nav {
 .testimonial .role {
     color:#888;
     font-weight: 700;
+}
+
+@media only screen and (max-width:800px) {
+    .nav-menu {
+        display:none;
+    }
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    header {
+        padding: 0 40px;
+        background-color: var(--primary);
+    }
+    header h2 {
+        color:#fff;
+        text-align: center;
+    }
+    .header-img {
+        position: absolute;
+        bottom: -25%;
+        width: fit-content;
+        left: 0;
+        right:0;
+        margin-left: auto;
+        margin-right:auto;   
+    }
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        padding:16px 32px;
+        align-items: center;
+        justify-content: center;
+    } 
+    .testimonials {
+        padding: 32px;
+    }
+    
+    .testimonial {
+        width: 100%;
+    }
+    .testimonial p {
+        width: 100%;
+    }    
 }
