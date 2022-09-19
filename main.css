@@ -1,3 +1,11 @@
+:root{
+    --primary: #729D84;
+    --secondary:#e99e4f;
+    --accent:#a44042;
+    --light:#61b2d7;
+    --base:#fffee9;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -32,6 +40,7 @@ h2 {
     margin:0 auto;
     position:relative;
     box-shadow: 0 0 8px #888;
+    background-color: var(--base);
 }
 
 header {
@@ -41,54 +50,70 @@ header {
     min-height: 800px;
     width: 100%;
     padding: 0 40px;
+    background-color: var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+header h2 {
+    color:#fff;
 }
 
 .header-img {
     position: absolute;
-    z-index:-10;
-    width: 100%;
-    height: 800px;
-    background: url("/images/header.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    bottom: -50%;
+    width: fit-content;
+    left: 0;
+    right:0;
+    margin-left: auto;
+    margin-right:auto;   
 }
 
 nav {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     max-height: 56px;
     margin: 34px auto;
     width:100%;
 }
 
 .logo {
-    background: url("/images/logo.svg") no-repeat;
     width: 170px;
     height: 33px;
     flex-grow: 1;
+    color:#fff;
 }
 
 .nav-menu {
     list-style-type: none;
     display: flex;
-    gap:47px;
+    gap:40px;
 }
 
 .nav-menu a {
     color:#fff;
+    font-size: 18px;
     text-decoration: none;
+    background-color: transparent;
+    padding: 4px 16px;
+    border-radius: 5px;
+    transition: background-color .2s ease-in;
+}
+.nav-menu a:hover {
+    background-color: rgba(0,0,0,.65);
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: minmax(500px,1fr);
 }
 
 .card img {
     display: flex;
-    width: 100%;
-    height: 100%;        
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;        
 }
 
 .card { 
@@ -105,30 +130,66 @@ nav {
     max-width: 445px;
 }
 
+.card .text h2 {
+    color:#666;
+}
+
 .card .text p {
     margin-top: 32px;
+    line-height: 175%;
 }
 
 .card .text a {
     margin-top: 40px;
     text-decoration: none;
-    color:#000;
+    color:#333;
     font-weight: 700;
     text-transform: uppercase;
     border-bottom: 10px solid transparent; 
+    transition: border-bottom .2s ease-in;
 }
 .card .text a:hover {
     border-bottom: 10px solid orangered;
 }
 
+.second {
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary);
+}
+
+.third {
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent);
+}
+.fifth {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+}
+.sixth {
+    width: 100%;
+    height: 100%;
+    background-color: var(--light);
+}
+
 .testimonials {
+    margin-top: 160px;
     padding:0 165px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.testimonials h3 {
+    color:#666;
+    font-size: 28px;
+}
+
 .testimonials-grid {
+    margin-top: 80px;
+    margin-bottom: 24px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap:30px;
@@ -137,5 +198,24 @@ nav {
 .testimonial{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    gap:16px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.5);
+    padding:8px;
+}
+
+.testimonial p {
+    line-height: 175%;
+    text-align: center;
+    color:#333;
+}
+.testimonial h4 {
+    color:#333;
+}
+
+.testimonial .role {
+    color:#888;
+    font-weight: 700;
 }
